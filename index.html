@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientador de Carrera Académica e Investigadora (ANECA / LOSU)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diagnóstico de Carrera Académica e Investigadora</h1>
+            <p class="subtitle">Herramienta de orientación sobre figuras, requisitos y vías de acreditación (ANECA / LOSU)</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Selecciona tu Situación de Origen</h2>
+            <div class="form-group">
+                <label for="origen">Indica tu estado actual:</label>
+                <select id="origen" onchange="actualizarDiagnostico()">
+                    <option value="">-- Selecciona tu situación actual --</option>
+                    <option value="predoc_proceso">Investigador/a No Doctor/a (FPI / FPU / Predoc / Proyecto)</option>
+                    <option value="predoc_tesis_leida_pendiente">Investigador/a No Doctor/a (Tesis leída / por leer)</option>
+                    <option value="predoc_tesis_leida">Investigador/a No Doctor/a (Tesis leída)</option>
+                    <option value="doctor_sin_acreditacion">Doctor/a / Postdoc (Sin acreditación)</option>
+                    <option value="doctor_pad_ppl">Doctor/a / PAD / PPL / Profesor Titular (TU) / PPL consolidado</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="resultado-card" class="card hidden">
+            <h2>2. Diagnóstico de Carrera y Figura Objetivo</h2>
+            <div class="grid-results">
+                <div class="result-box">
+                    <h3>Figura Objetivo Recomendada</h3>
+                    <p id="figura-objetivo" class="highlight">-</p>
+                </div>
+                <div class="result-box">
+                    <h3>Requisito Previo Principal</h3>
+                    <p id="requisito-previo">-</p>
+                </div>
+                <div class="result-box">
+                    <h3>Vía o Procedimiento ANECA</h3>
+                    <p id="via-procedimiento">-</p>
+                </div>
+            </div>
+
+            <!-- Sección dinámica de recomendaciones y subetapas -->
+            <div id="seccion-subetapas" class="subetapas-container hidden">
+                <h3>Decisiones Clave e Hitos de la Etapa</h3>
+                <div id="subetapas-contenido"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
